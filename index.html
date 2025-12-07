@@ -1,3 +1,4 @@
+<!-- Deployed to GitHub -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -221,7 +222,7 @@
 					<a href="ToadCraft">Learn more about our Vanilla+ Servers (This web page is WIP)&rarr;</a>
 				</p>
 			</div>
-			
+
 			<!-- Evolution Server Card: Details for the Evolution server. -->
 			<div class="card p-8">
 				<h3 class="text-3xl font-bold text-purple-400 mb-4 flex items-center">
@@ -272,7 +273,7 @@
 			</div>
 		</div>
 	</section>
-	
+
 	<!-- Rules Section: Outlines the server rules for players. -->
 	<section id="rules" class="content-section mb-16">
 		<h2 class="text-4xl font-bold section-title mb-8">Server Rulz</h2>
@@ -287,7 +288,7 @@
 			<p class="text-gray-300 mt-4">Breaking these rules may result in warnings, temporary bans, or permanent bans depending on the severity and frequency of the offense.</p>
 		</div>
 	</section>
-	
+
 	<!-- How to Join Section: Provides instructions for connecting to the servers from various platforms. -->
 	<section id="how-to-join" class="content-section mb-16">
 		<h2 class="text-4xl font-bold section-title mb-8">How to Join</h2>
@@ -317,7 +318,7 @@
 					<li>Scroll down to see how to exit the Lobby and join actual servers.</li>
 				</ol>
 			</div>
-			
+
 			<!-- Bedrock Edition (Mobile & Windows 10) Instructions -->
 			<div class="card p-8">
 				<h3 class="text-3xl font-bold text-green-400 mb-4 flex items-center">
@@ -348,7 +349,7 @@
 					<li>Scroll down to see how to exit the Lobby and join actual servers.</li>
 				</ol>
 			</div>
-			
+
 			<!-- Bedrock Console Edition (Xbox, PlayStation, Nintendo Switch) Instructions -->
 			<div class="card p-8 col-span-1 md:col-span-2">
 				<h3 class="text-3xl font-bold text-orange-400 mb-4 flex items-center">
@@ -403,24 +404,24 @@
 		<p>This work is licensed under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" class="text-blue-400 hover:underline">CC BY-NC-SA 4.0 copyright</a> (unless otherwise specified).</p>
 		<p>We use the Open Dyslexic font now!</p>
 		<p class="mt-2">Built with <i class="fas fa-heart text-red-500"></i> for the Minecraft Community.</p>
-		<p> Eventually we will make this open source on GitHub.</p>
+		<p> We are testing GitHub right now.</p>
 	</div>
 </footer>
 <script type="module">
-	
+
 	// --- Navigation Logic ---
 	// This section manages the single-page application's navigation,
 	// showing and hiding different content sections based on menu clicks.
 	const menuButton = document.getElementById('menuButton'); // The button that toggles the dropdown menu.
 	const dropdownMenu = document.getElementById('dropdownMenu'); // The navigation dropdown menu itself.
 	const contentSections = document.querySelectorAll('.content-section'); // All sections that can be displayed.
-	
+
 	// Toggle dropdown visibility when the menu button is clicked.
 	menuButton.addEventListener('click', () => {
 		// Toggles the display style between 'block' (visible) and 'none' (hidden).
 		dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
 	});
-	
+
 	// Hide dropdown when clicking anywhere outside it.
 	window.addEventListener('click', (event) => {
 		// If the click is not on the menu button or within the dropdown, hide the dropdown.
@@ -430,7 +431,7 @@
 			}
 		}
 	});
-	
+
 	// Function to show a specific content section and hide all others.
 	function showSection(sectionId) {
 		contentSections.forEach(section => {
@@ -458,14 +459,14 @@
 			}
 		});
 	});
-	
+
 	// --- Live Server Status (mcstatus.io) ---
 	const API_BASE = 'https://api.mcstatus.io/v2/status/java/';
 	const servers = [
 		{ name: 'Vanilla+', address: 'mc.toadhead.net', spanId: 'vanillaPlusPlayers', prefixId: 'vanillaPlusPrefix', suffixId: 'vanillaPlusSuffix' },
 		{ name: 'Evolution', address: 'mc.toadhead.net:25595', spanId: 'evolutionPlayers', prefixId: 'evolutionPrefix', suffixId: 'evolutionSuffix' }
 	];
-	
+
 	async function fetchWithTimeout(url, timeoutMs = 8000) {
 		const controller = new AbortController();
 		const id = setTimeout(() => controller.abort(), timeoutMs);
@@ -476,7 +477,7 @@
 			clearTimeout(id);
 		}
 	}
-	
+
 	function setOnlineUI({ el, prefixEl, suffixEl }, playersOnline, playersMax, versionName) {
 		// Show label and suffix, display player count
 		if (prefixEl) prefixEl.style.display = '';
@@ -485,7 +486,7 @@
 		el.title = (playersMax ? `${playersOnline}/${playersMax} players` : `${playersOnline} players`) + (versionName ? ` • ${versionName}` : '');
 		el.style.opacity = '1';
 	}
-	
+
 	function setOfflineUI({ el, prefixEl, suffixEl }, serverName, reasonTitle = 'Server is offline or unreachable') {
 		// Hide label and suffix, replace center span with explicit offline message
 		if (prefixEl) prefixEl.style.display = 'none';
@@ -494,7 +495,7 @@
 		el.title = reasonTitle;
 		el.style.opacity = '0.9';
 	}
-	
+
 	async function updateServerStatus() {
 		for (const { name, address, spanId, prefixId, suffixId } of servers) {
 			const el = document.getElementById(spanId);
@@ -525,7 +526,7 @@
 			}
 		}
 	}
-	
+
 	// On window load: Ensures the initial section ('Our Servers') is displayed when the page loads and starts status polling.
 	window.onload = () => {
 		showSection('servers'); // Sets the default view to the "Our Servers" section.
