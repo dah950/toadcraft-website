@@ -1,0 +1,29 @@
+/* OpenDyslexic font-face declarations moved here so font CSS lives with the font files */
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('OpenDyslexic-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('OpenDyslexic-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('OpenDyslexic-Italic.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('OpenDyslexic-BoldItalic.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}

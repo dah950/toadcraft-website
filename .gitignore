@@ -1,0 +1,12 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Web tooling (keep if you add tooling later)
+node_modules/
+.dist/
+.build/
+.tmp/
+
+# Your backups directory
+files/
