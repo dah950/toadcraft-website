@@ -13,6 +13,28 @@
     font-style: normal;
     font-display: swap;
 }
+/* Map additional bold weights used by Tailwind to the available Bold font file */
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('OpenDyslexic-Bold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('OpenDyslexic-Bold.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('OpenDyslexic-Bold.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
 @font-face {
     font-family: 'OpenDyslexic';
     src: url('OpenDyslexic-Italic.otf') format('opentype');
@@ -24,6 +46,28 @@
     font-family: 'OpenDyslexic';
     src: url('OpenDyslexic-BoldItalic.otf') format('opentype');
     font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+/* Map additional italic bold weights to the available BoldItalic font file */
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('OpenDyslexic-BoldItalic.otf') format('opentype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('OpenDyslexic-BoldItalic.otf') format('opentype');
+    font-weight: 800;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('OpenDyslexic-BoldItalic.otf') format('opentype');
+    font-weight: 900;
     font-style: italic;
     font-display: swap;
 }
