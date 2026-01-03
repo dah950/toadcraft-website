@@ -20,6 +20,7 @@
 				<i class="fas fa-bars mr-2"></i> Menu
 			</button>
 			<div id="dropdownMenu" class="dropdown-menu">
+				<a href="#" id="openSettings">Settings</a>
 				<a href="#" data-section="servers">Our Servers</a>
 				<a href="#" data-section="how-to-join">How to Join</a>
 				<a href="#" data-section="rules">Server Rules</a>
@@ -31,6 +32,22 @@
 		</div>
 	</div>
 </header>
+
+<!-- Settings Modal -->
+<div id="settingsModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" id="closeSettings" aria-label="Close settings">&times;</span>
+        <h3 class="text-2xl font-bold text-blue-400 mb-4">Settings</h3>
+        <div class="flex items-center justify-between">
+            <span class="text-gray-200">Use Open Dyslexic font</span>
+            <label class="switch" aria-label="Toggle Open Dyslexic font">
+                <input type="checkbox" id="useOpenDyslexic">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <p class="text-gray-400 mt-3 text-sm">Toggle this off to use your device's standard system fonts. Your preference is saved on this device.</p>
+    </div>
+</div>
 
 <main class="container mx-auto px-4 py-12">
 	<!-- Server Overview Section (Home Page): Displays information about both Minecraft servers. -->
@@ -257,6 +274,59 @@
 	const menuButton = document.getElementById('menuButton'); // The button that toggles the dropdown menu.
 	const dropdownMenu = document.getElementById('dropdownMenu'); // The navigation dropdown menu itself.
 	const contentSections = document.querySelectorAll('.content-section'); // All sections that can be displayed.
+	// Settings elements
+	const openSettingsLink = document.getElementById('openSettings');
+	const settingsModal = document.getElementById('settingsModal');
+	const closeSettingsBtn = document.getElementById('closeSettings');
+	const useOpenDyslexicCheckbox = document.getElementById('useOpenDyslexic');
+
+	// --- Settings: OpenDyslexic toggle with persistence ---
+	(function initFontPreference() {
+		try {
+			const stored = localStorage.getItem('useOpenDyslexic');
+			const useOD = stored === null ? true : stored === 'true';
+			applyFontPreference(useOD);
+			useOpenDyslexicCheckbox.checked = useOD;
+		} catch (e) {
+			// If storage is unavailable, default to enabled
+			applyFontPreference(true);
+			useOpenDyslexicCheckbox.checked = true;
+		}
+	})();
+
+	function applyFontPreference(useOD) {
+		if (useOD) {
+			document.body.classList.remove('no-od');
+		} else {
+			document.body.classList.add('no-od');
+		}
+	}
+
+	useOpenDyslexicCheckbox.addEventListener('change', () => {
+		const useOD = useOpenDyslexicCheckbox.checked;
+		applyFontPreference(useOD);
+		try { localStorage.setItem('useOpenDyslexic', String(useOD)); } catch (e) { /* ignore */ }
+	});
+
+	function openSettings() {
+		settingsModal.style.display = 'flex';
+	}
+	function closeSettings() {
+		settingsModal.style.display = 'none';
+	}
+
+	openSettingsLink.addEventListener('click', (e) => {
+		e.preventDefault();
+		openSettings();
+		dropdownMenu.style.display = 'none';
+	});
+	closeSettingsBtn.addEventListener('click', closeSettings);
+	window.addEventListener('click', (e) => {
+		if (e.target === settingsModal) closeSettings();
+	});
+	window.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') closeSettings();
+	});
 
 	// Toggle dropdown visibility when the menu button is clicked.
 	menuButton.addEventListener('click', () => {
