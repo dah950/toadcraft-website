@@ -6,4 +6,4 @@ This page is still a work in progress, so please be patient if something behaves
 
 Made by: Daxton "Dax" Heath\
 Copyright: Creative Commons BY-NC-SA 4.0\
-Copyright explanation: CC BY-NC-SA basically means you can do whatever you want with the code, but you have to give credit back to me, Dax (BY), cannot sell this work (NC), and you must use the same license (SA).
+Copyright explanation: CC BY-NC-SA basically means you can do whatever you want with the code, but you have to give credit back to me (BY), cannot sell this work (NC), and you must use the same license (SA).
