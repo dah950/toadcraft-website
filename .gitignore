@@ -8,8 +8,7 @@ node_modules/
 .build/
 .tmp/
 
-# Your backups directory
-/adminHelp/
+# Files page too bit to put on GitHub
 /files/
 
 # Admin directory
