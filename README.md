@@ -1,4 +1,5 @@
 # ToadCraft Website
+# This has been deemed AI slop (by me) will work on a better one eventualy (likely never)
 This is the official website for all the ToadCraft Minecraft servers. This website isn't quite finished yet, but it is good enough for now.\
 ToadCraft is a group of Minecraft servers that are run by the Heath family. We also make modpacks for them [on Modrinth](https://modrinth.com/user/daxtonheath).\
 You can find out about the Minecraft servers [here](https://www.toadhead.net). (or you can be a nerd and look through the source code yourself)\
